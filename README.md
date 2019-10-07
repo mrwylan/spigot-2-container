@@ -27,10 +27,25 @@ https://account.mojang.com/terms
 
 4. build the image with docker: e.g.
 
-´´´
+```
 docker build -t spigot-2-container:1.14.4 --build-arg world=ExodusWorld --build-arg rev=1.14.4 . 
-´´´
-
-## build-arg
+```
+### build-arg
 * world = the name of the level to play
 * rev = available MC version for the build tool
+
+5. run the server
+
+for the level data - use a docker volume
+
+```
+docker volume create spigot-leveldata
+```
+
+start
+
+```
+docker run -v spigot-leveldata:/leveldata -e SPIGOT_LEVELDATA=/leveldata -p 25565:25565 -d --name spigot-2 --restart unless-stopped spigot-2-container:1.14.4 
+```
+
+
