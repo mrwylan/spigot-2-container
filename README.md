@@ -14,4 +14,5 @@ You have to build your container image by Your own. There will be no public imag
 ## see
 
 https://www.spigotmc.org/threads/spigot.330107/#post-3082540
+
 https://account.mojang.com/terms
